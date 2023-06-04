@@ -1,0 +1,41 @@
+//Задание 4
+
+function PowerOffOn(firma, power) {              
+    this.firma = firma;                
+    this.power = power;
+    this.status = false;
+    this.priboron = function() {
+    console.log(this.firma + " On!");
+    this.status = true;
+  };
+  this.priboroff = function() {
+    console.log(this.firma + " Off");
+    this.status = false;
+  };
+}
+
+
+function Lampa (firma, power) {                            
+    this.firma = firma;
+    this.power = power;
+}
+
+function PC (firma, power) {                                  
+    this.firma = firma;
+    this.power = power;
+}
+
+
+Lampa.prototype = new PowerOffOn();                            
+PC.prototype = new PowerOffOn();
+
+const homeLampa = new Lampa("Yandex", 20);                      
+const notebook = new PC ("Macbook", 220);
+
+homeLampa.priboroff();
+notebook.priboron();
+
+console.log("состояние приборов:");
+console.log(homeLampa);
+console.log(notebook);
+console.log(`Мощность приборов составляет - ${homeLampa.power + notebook.power} W`)

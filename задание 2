@@ -1,0 +1,6 @@
+//Задание 2
+
+function checkPropInObj (string, obj) {
+    return (string in obj);
+  }
+  

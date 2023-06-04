@@ -1,0 +1,43 @@
+//Задание 5
+
+class PowerOffOn {
+    constructor(firma, power){
+        this.firma = firma;                
+        this.power = power;
+        this.status = false;
+    };
+    priboron = function() {
+      console.log(this.firma + " On!");
+      this.status = true;
+    };
+    priboroff = function() {
+      console.log(this.firma + " Off");
+      this.status = false;
+    };
+  };
+  
+  class Lampa extends PowerOffOn {
+    constructor (firma, power, colorlamp) {
+        super(firma, power, status);
+        this.colorlamp = colorlamp;
+      };
+  };
+  
+  class notebook extends PowerOffOn {
+    constructor(firma, power, typeHDD) {
+        super(firma, power, status); 
+        this.typeHDD = typeHDD;
+    };
+  };
+  
+  const homeLampa = new Lampa ("Yandex", 20, "white");
+  const notebook2 = new notebook ("Macbook", 220, "SDD");
+  
+  homeLampa.priboroff();
+  notebook2.priboron();
+  
+  console.log("состояние приборов:");
+  console.log(homeLampa);
+  console.log(notebook2);
+  console.log(`Мощность приборов составляет - ${homeLampa.power + notebook2.power} W`);
+  

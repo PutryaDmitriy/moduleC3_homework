@@ -1,0 +1,12 @@
+//Задание 1
+
+
+
+function printObject (object) {
+    for (let prop in object) {
+      if (obj.hasOwnProperty(prop)) {
+        console.log(prop, object[prop]);
+      }
+    }
+  }
+  
